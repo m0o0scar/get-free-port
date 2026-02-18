@@ -1,0 +1,24 @@
+{
+    "name": "find-free-port",
+    "version": "1.0.0",
+    "description": "Find a free TCP port starting from a given base port. Supports spawning a command with the found port.",
+    "main": "index.js",
+    "bin": {
+        "find-free-port": "./bin/find-free-port.js"
+    },
+    "scripts": {
+        "test": "node bin/find-free-port.js"
+    },
+    "keywords": [
+        "port",
+        "free-port",
+        "find-port",
+        "cli",
+        "cross-platform"
+    ],
+    "author": "",
+    "license": "MIT",
+    "engines": {
+        "node": ">=14"
+    }
+}
