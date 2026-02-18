@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-// find-free-port CLI
+// get-free-port CLI
 // Finds a free TCP port starting from BASE_PORT (default 3000) and prints it to stdout.
 // If extra args are provided after '--', spawns that command with {PORT} replaced by the found port.
 //
-// Usage (standalone):   npx find-free-port [basePort]
-// Usage (with command): npx find-free-port [basePort] -- <cmd> [args...]
-//   e.g. npx find-free-port 3000 -- next dev --webpack -p {PORT}
+// Usage (standalone):   npx get-free-port [basePort]
+// Usage (with command): npx get-free-port [basePort] -- <cmd> [args...]
+//   e.g. npx get-free-port 3000 -- next dev --webpack -p {PORT}
 
-const { findFreePort } = require('../index');
+const { getFreePort } = require('../index');
 const { spawn } = require('child_process');
 
 const separatorIndex = process.argv.indexOf('--');
@@ -21,7 +21,7 @@ if (isNaN(BASE_PORT) || BASE_PORT < 1 || BASE_PORT > 65535) {
     process.exit(1);
 }
 
-findFreePort(BASE_PORT).then((port) => {
+getFreePort(BASE_PORT).then((port) => {
     if (commandArgs.length === 0) {
         // Standalone mode: just print the port
         process.stdout.write(String(port) + '\n');

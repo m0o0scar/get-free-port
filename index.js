@@ -10,14 +10,14 @@ const net = require('net');
  * @param {number} startPort - The port to start scanning from (default: 3000)
  * @returns {Promise<number>} - Resolves with the first available port
  */
-function findFreePort(startPort = 3000) {
+function getFreePort(startPort = 3000) {
     return new Promise((resolve) => {
         const server = net.createServer();
         server.listen(startPort, () => {
             server.close(() => resolve(startPort));
         });
-        server.on('error', () => resolve(findFreePort(startPort + 1)));
+        server.on('error', () => resolve(getFreePort(startPort + 1)));
     });
 }
 
-module.exports = { findFreePort };
+module.exports = { getFreePort };
