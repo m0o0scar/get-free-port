@@ -1,4 +1,4 @@
-# get-free-port
+# gfport
 
 A cross-platform CLI tool (and Node.js library) to find a free TCP port starting from a given base port.
 
@@ -6,11 +6,11 @@ A cross-platform CLI tool (and Node.js library) to find a free TCP port starting
 
 ```bash
 # Print a free port starting from 3200
-npx get-free-port 3200
+npx gfport 3200
 
 # Start a command with the free port substituted in via {PORT}
-npx get-free-port 3000 -- next dev --webpack -p {PORT}
-npx get-free-port 8080 -- python -m http.server {PORT}
+npx gfport 3000 -- next dev --webpack -p {PORT}
+npx gfport 8080 -- python -m http.server {PORT}
 ```
 
 ### Arguments
@@ -23,7 +23,7 @@ npx get-free-port 8080 -- python -m http.server {PORT}
 ## Programmatic Usage
 
 ```js
-const { getFreePort } = require('get-free-port');
+const { getFreePort } = require('gfport');
 
 const port = await getFreePort(3200);
 console.log(`Free port: ${port}`);

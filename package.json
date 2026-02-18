@@ -1,10 +1,10 @@
 {
-    "name": "get-free-port",
+    "name": "gfport",
     "version": "1.0.0",
     "description": "Find a free TCP port starting from a given base port. Supports spawning a command with the found port.",
     "main": "index.js",
     "bin": {
-        "get-free-port": "./bin/get-free-port.js"
+        "gfport": "bin/get-free-port.js"
     },
     "scripts": {
         "test": "node bin/get-free-port.js"
