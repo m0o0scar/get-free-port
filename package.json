@@ -1,6 +1,6 @@
 {
     "name": "gfport",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Find a free TCP port starting from a given base port. Supports spawning a command with the found port.",
     "main": "index.js",
     "bin": {
